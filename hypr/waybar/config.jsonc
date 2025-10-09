@@ -1,0 +1,33 @@
+{
+  "layer": "bottom",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["battery"],
+  "hyprland/workspaces": {
+        "format": "{icon}",
+	"on-click": "activate",
+	"format-icons": {
+		"1": "⬤",
+  	        "2": "⬤",
+  	        "3": "⬤",
+  	        "4": "⬤",
+  	        "5": "⬤",
+  	        "default": "⬤"
+  	},
+	"persistent-workspaces": {
+		"1": [],
+		"2": [],
+		"3": [],
+		"4": [],
+		"5": []
+	},
+        "workspace-taskbar": {
+            "enable": true,
+	    "format": "{icon}",
+	    "window-rewrite-default": "󰅀",
+            "icon-size": 16,
+            "icon-theme": "Numix-Circle",
+	    "update-active-window": true
+        }
+    }
+}   
