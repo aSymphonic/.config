@@ -25,7 +25,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-require("catppuccin").setup()
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
@@ -36,5 +35,5 @@ require('neo-tree').setup({
 })
 vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal left<CR>', {desc = 'open file tree'})
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "gruvbox-material"
   
