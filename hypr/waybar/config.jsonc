@@ -29,5 +29,12 @@
             "icon-theme": "Numix-Circle",
 	    "update-active-window": true
         }
-    }
+    },
+	"battery": {
+		"states": {
+			"warning": 50,
+			"critical": 15
+		}
+	}
+
 }   

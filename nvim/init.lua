@@ -33,6 +33,82 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live gr
 require('neo-tree').setup({
   -- options go here
 })
+
+require("hardtime").setup()
+
+require('leap').opts.preview_filter =
+  function (ch0, ch1, ch2)
+    return not (
+      ch1:match('%s') or
+      ch0:match('%a') and ch1:match('%a') and ch2:match('%a')
+    )
+  end
+
+-- Define equivalence classes for brackets and quotes, in addition to
+-- the default whitespace group:
+require('leap').opts.equivalence_classes = {
+  ' \t\r\n', '([{', ')]}', '\'"`'
+}
+
+-- Use the traversal keys to repeat the previous motion without
+-- explicitly invoking Leap:
+require('leap.user').set_repeat_keys('<enter>', '<backspace>')
+
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    always_show_tabline = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+      refresh_time = 16, -- ~60fps
+      events = {
+        'WinEnter',
+        'BufEnter',
+        'BufWritePost',
+        'SessionLoadPost',
+        'FileChangedShellPost',
+        'VimResized',
+        'Filetype',
+        'CursorMoved',
+        'CursorMovedI',
+        'ModeChanged',
+      },
+    }
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
+}
+
 vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal left<CR>', {desc = 'open file tree'})
 
 vim.cmd.colorscheme "gruvbox-material"

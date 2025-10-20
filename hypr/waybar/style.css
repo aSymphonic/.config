@@ -15,7 +15,14 @@ window#waybar {
 
 #battery {
 	padding: 0 10px;
+	color: LawnGreen;
 }   
+#battery.warning {
+	color: OrangeRed;
+}
+#battery.critical {
+	color: red;
+}
 
 #workspaces .taskbar-window.active {
     background-color: rgba(255, 255, 255, 0.15);
