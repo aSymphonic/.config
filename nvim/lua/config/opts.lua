@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
 
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+vim.keymap.set("n", "<leader>aa", "<cmd>Floaterminal<CR>")
+
 -- Indentation settings
 vim.opt.expandtab = true -- Converts tabs to spaces
 vim.opt.shiftwidth = 4 -- Number of spaces for each step of (auto)indent
