@@ -1,0 +1,11 @@
+You Will Need:
+  - alacritty
+  - foot term
+  - hyprland
+  - waybar
+  - hyprpaper
+  - cclipd
+  - fsel
+  - hyprpolkitagent
+  - nvim
+  - firefox
